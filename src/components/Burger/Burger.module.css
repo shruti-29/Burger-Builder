@@ -2,11 +2,18 @@
     width :100%;
     margin:auto;
     height: 250px;
-    overflow: hidden; /**review**/
+    overflow: auto; /**review**/
     text-align: center;
     font-weight: bold;
     font-size: 1.2rem;
+ /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
 }
+.Burger::-webkit-scrollbar { /* WebKit */
+    width: 0;
+    height: 0;
+}
+
 
 @media(min-width:1000px) and (min-height:700px){
     .Burger{

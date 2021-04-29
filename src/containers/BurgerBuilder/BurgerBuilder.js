@@ -9,6 +9,7 @@ import Spinner from '../../components/UI/Spinner/Spinner';
 import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
 
 
+
 const INGREDIENT_PRICES = {
     salad: 0.5,
     cheese: 0.7,
@@ -82,27 +83,30 @@ class BurgerBuilder extends Component{
     };
 
     continuePurchase = () => {
-        this.setState({loading:true});
-        const post = {
-            ingredients:this.state.ingredients,
-            price: this.state.totalPrice,
-            customer:{
-                name:'Foodie',
-                address:'Test Colony',
-                email:'test@test.com'
-            },
-            deliveryMethod:'fastest'
-        }
-        axios.post('/orders.json',post)
-            .then( response => { 
-                this.setState({loading:false,purchasing:false});
-                console.log(response);
+        // this.setState({loading:true});
+        // const post = {
+        //     ingredients:this.state.ingredients,
+        //     price: this.state.totalPrice,
+        //     customer:{
+        //         name:'Foodie',
+        //         address:'Test Colony',
+        //         email:'test@test.com'
+        //     },
+        //     deliveryMethod:'fastest'
+        // }
+        // axios.post('/orders.json',post)
+        //     .then( response => { 
+        //         this.setState({loading:false,purchasing:false});
+        //         console.log(response);
 
-            })
-            .catch(error => {
-                this.setState({loading:false,purchasing:false});
-                console.log(error);
-            })
+        //     })
+        //     .catch(error => {
+        //         this.setState({loading:false,purchasing:false});
+        //         console.log(error);
+        //     })
+        this.props.history.push('/checkout')
+        //to push checkout page onto the stack
+        
     };
 
 
